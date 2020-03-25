@@ -2,32 +2,31 @@
 
 # 入力文字列
 S = input()
+rev_S = S[::-1]
 
 dream   = "dream"
 dreamer = "dreamer"
 erase   = "erase"
 eraser  = "eraser" 
 
-ans = "YES"
+# 後ろから3番目の文字で判別可能
+rev_str_dict = {
+    'e':dream[::-1]
+    ,'m':dreamer[::-1]
+    ,'a':erase[::-1]
+    ,'s':eraser[::-1]
+}
 
-while(ans == "YES"):
-    if(S[len(dream):] == dream or S[len(dream):] == ""):
-        print(S[len(dream):])
-        print(S[:len(dream)])
-        S = S[:len(dream)]
-    elif(S[len(dreamer):] == dreamer or S[len(dreamer):] == ""):
-        print(S[len(dreamer):])
-        print(S[:len(dreamer)])
-        S = S[:len(dreamer)]
-    elif(S[len(erase):] == erase or S[len(erase):] == ""):
-        print(S[len(erase):])
-        print(S[:len(erase)])
-        S = S[:len(erase)]
-    elif(S[len(eraser):] == eraser or S[len(eraser):] == ""):
-        print(S[len(eraser):])
-        print(S[:len(eraser)])
-        S = S[:len(eraser)]
-    else:
-        ans = "NO"
+print(rev_S)
+print(rev_str_dict)
 
-print(ans)
+# 3文字目の文字から辞書を取得
+target_word = rev_str_dict[rev_S[2]]
+cut_word = rev_S[:len(target_word)]
+if()
+
+
+if len(rev_S) == 0:
+    print("YES")
+elif len(rev_S) < len(target_word):
+    print("NO")
